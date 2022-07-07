@@ -50,7 +50,6 @@ public class PlayerData : MonoBehaviour
     {
         cashText.text = "$" + cash;
 
-        cash += 1;
         //save the cash TODO: Don't do this every frame, only on game exit
         PlayerPrefs.SetInt("cash", cash);
     }

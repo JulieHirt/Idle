@@ -43,7 +43,8 @@ public class PlayerData : MonoBehaviour
         //call on game start
 
         //will load the cash and set it to START_CASH if there is no saved value
-        cash = PlayerPrefs.GetFloat("cash", START_CASH);
+        cash = 2000;
+        //cash = PlayerPrefs.GetFloat("cash", START_CASH);
     }
 
     private void Update()

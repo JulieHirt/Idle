@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class Generator : MonoBehaviour
 {
+    //TO DO: make private
+    //TO DO: Load from JSON
+    public string name;
     public int base_cost;
     public int payout_time;
     public int payout_amount;

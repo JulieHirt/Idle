@@ -1,0 +1,13 @@
+{
+"generators":
+[
+{"name": "Bakery",
+"base_cost":"5000"
+},
+
+{"name": "Arcade",
+"base_cost":"700"
+}
+
+]
+}

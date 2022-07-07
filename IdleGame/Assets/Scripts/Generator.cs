@@ -61,8 +61,16 @@ public class Generator : MonoBehaviour
     }
     public void Buy()
     {
-        PlayerData.data.loseCash(base_cost);
-        Debug.Log("spent" + base_cost);
+        //conver to int float!!!
+        float exponent = (float)qty_owned + 1;
+        float cost = Mathf.Pow((float)base_cost, exponent);
+        int intcost = (int)cost;
+        PlayerData.data.loseCash(intcost);
+        Debug.Log("spent" + cost);
+        qty_owned += 1;
+
+        //update the ui
+        runButton.GetComponentInChildren<Text>().text = name + "\n" + qty_owned;
     }
     // Start is called before the first frame update
     void Start()

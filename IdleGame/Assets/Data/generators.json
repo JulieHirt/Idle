@@ -2,11 +2,17 @@
 "generators":
 [
 {"name": "Bakery",
-"base_cost":"5000"
+"base_cost":5000,
+"payout_time": 10,
+"payout_amount":500,
+"qty_owned":0
 },
 
 {"name": "Arcade",
-"base_cost":"700"
+"base_cost":700,
+"payout_time": 30,
+"payout_amount":50,
+"qty_owned":0
 }
 
 ]

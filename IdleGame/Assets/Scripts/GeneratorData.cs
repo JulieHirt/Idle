@@ -7,5 +7,8 @@ public class GeneratorData
 {
     //these variables are case sensitive and must match the strings ie "name" and "base_cost" in the JSON.
     public string name;
-    public string base_cost;
+    public int base_cost;
+    public int payout_time;
+    public int payout_amount;
+    public int qty_owned;
 }

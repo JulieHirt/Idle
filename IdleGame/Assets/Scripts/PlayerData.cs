@@ -48,7 +48,7 @@ public class PlayerData : MonoBehaviour
 
     private void Update()
     {
-        cashText.text = "Cash: " + cash;
+        cashText.text = "$" + cash;
 
         cash += 1;
         //save the cash TODO: Don't do this every frame, only on game exit

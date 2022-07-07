@@ -22,6 +22,14 @@ public class PlayerData : MonoBehaviour
     {
         cash = num;
     }
+    public void gainCash(int num)
+    {
+        cash += num;
+    }
+    public void loseCash(int num)
+    {
+        cash -= num;
+    }
     public int getNumGenerators()
     {
         return numGenerators;

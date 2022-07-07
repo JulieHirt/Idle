@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   START_CASH: 1000
+  cashText: {fileID: 418343844}
 --- !u!4 &235990878
 Transform:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - PlayerData
     - QuitOnClick
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
@@ -63,6 +64,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 3456}
     - Class: 114
       Script: {instanceID: 17158}
+    - Class: 114
+      Script: {instanceID: 22532}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -602,6 +605,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: QuitOnClick
+  - hash:
+      serializedVersion: 2
+      Hash: 640c1e25efb32efd071996b39b66d917
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerData
   platform: 19
   scenePathNames:
   - Assets/Scenes/Game.unity

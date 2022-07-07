@@ -36,12 +36,15 @@ public class PlayerData : MonoBehaviour
 
         //will load the cash and set it to START_CASH if there is no saved value
         cash = PlayerPrefs.GetInt("cash", START_CASH);
-        Debug.Log(cash);
     }
 
     private void Update()
     {
         cashText.text = "Cash: " + cash;
+
+        cash += 1;
+        //save the cash TODO: Don't do this every frame, only on game exit
+        PlayerPrefs.SetInt("cash", cash);
     }
 
 

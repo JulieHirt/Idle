@@ -64,8 +64,7 @@ public class Generator : MonoBehaviour
         //conver to int float!!!
         float exponent = (float)qty_owned + 1;
         float cost = Mathf.Pow((float)base_cost, exponent);
-        int intcost = (int)cost;
-        PlayerData.data.loseCash(intcost);
+        PlayerData.data.loseCash(cost);
         Debug.Log("spent" + cost);
         qty_owned += 1;
 
@@ -81,6 +80,7 @@ public class Generator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //determine if buttons are interactive
         
     }
 }

@@ -8,25 +8,25 @@ public class PlayerData : MonoBehaviour
     //Singleton
     public static PlayerData data; //static reference
 
-    public int START_CASH = 1000; //starting cash for the player on initial game start
-    private int cash;
+    public float START_CASH = 1000; //starting cash for the player on initial game start
+    private float cash;
     private int numGenerators;
 
     public Text cashText;
 
-    public int getCash()
+    public float getCash()
     {
         return cash;
     }
-    public void setCash(int num)
+    public void setCash(float num)
     {
         cash = num;
     }
-    public void gainCash(int num)
+    public void gainCash(float num)
     {
         cash += num;
     }
-    public void loseCash(int num)
+    public void loseCash(float num)
     {
         cash -= num;
     }
@@ -43,7 +43,7 @@ public class PlayerData : MonoBehaviour
         //call on game start
 
         //will load the cash and set it to START_CASH if there is no saved value
-        cash = PlayerPrefs.GetInt("cash", START_CASH);
+        cash = PlayerPrefs.GetFloat("cash", START_CASH);
     }
 
     private void Update()
@@ -51,7 +51,7 @@ public class PlayerData : MonoBehaviour
         cashText.text = "$" + cash;
 
         //save the cash TODO: Don't do this every frame, only on game exit
-        PlayerPrefs.SetInt("cash", cash);
+        PlayerPrefs.SetFloat("cash", cash);
     }
 
 

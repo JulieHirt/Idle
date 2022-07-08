@@ -15,7 +15,8 @@ public class Generator : MonoBehaviour
     private int automate_cost;
 
     private float current_cost; //calculated based on base_cost, formula: base_cost^(qty_owned+1)
-    private int time_until_payout;
+    private int time_until_payout; //counts down to 0 while timer is running
+    private bool is_running; //set to true while countdown coroutine is running
 
     public Button runButton;
     public Button automateButton;
@@ -71,6 +72,10 @@ public class Generator : MonoBehaviour
         Debug.Log("spent" + current_cost);
 
         //update the qty_owned and the new current_cost
+        if(is_running == false) //test to make sure we are not running the generator already
+        {
+            runButton.interactable = true;
+        }
         qty_owned += 1;
         float exponent = (float)qty_owned + 1;
         current_cost = Mathf.Pow((float)base_cost, exponent);
@@ -92,6 +97,7 @@ public class Generator : MonoBehaviour
         UpdateBuyUI();
         automateButton.GetComponentInChildren<Text>().text = "Automate: $" + automate_cost;
         time_until_payout = payout_time;
+        is_running = false;
     }
 
     void UpdateTimeUI()
@@ -136,10 +142,6 @@ public class Generator : MonoBehaviour
         {
             runButton.interactable = false;
         }
-        else
-        {
-            runButton.interactable = true;
-        }
 
     }
 
@@ -150,18 +152,21 @@ public class Generator : MonoBehaviour
         Debug.Log("Payout");
         time_until_payout = payout_time;
         StopCoroutine("Countdown");
+        runButton.interactable = true;
+        is_running = false;
     }
 
     private IEnumerator Countdown()
     {
         //countdown to payout, then add payout to cash stack
-        
+
+        is_running = true;
         //add code to move slider
         Debug.Log("in the coroutine");
-        
+        runButton.interactable = false;
+
         while (time_until_payout >= 0)
         {
-            
             UpdateTimeUI();
             time_until_payout -= 1;
             yield return new WaitForSeconds(1f);

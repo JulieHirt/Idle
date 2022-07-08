@@ -22,6 +22,7 @@ public class Generator : MonoBehaviour
     public Button automateButton;
     public Button buyButton;
     public Text timeText;
+    public Slider progressBar;
 
 
     //getters and setters
@@ -103,6 +104,7 @@ public class Generator : MonoBehaviour
     void UpdateTimeUI()
     {
         timeText.text = time_until_payout.ToString();
+        progressBar.value = 0.5f;
     }
 
     void UpdateBuyUI()

@@ -78,7 +78,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 129448401664289386}
   m_FillRect: {fileID: 129448401265971738}
   m_HandleRect: {fileID: 129448401664289387}
@@ -477,6 +477,7 @@ MonoBehaviour:
   automateButton: {fileID: 129448402909448647}
   buyButton: {fileID: 129448401556141992}
   timeText: {fileID: 129448402523879780}
+  progressBar: {fileID: 129448400952049129}
 --- !u!1 &129448401556141998
 GameObject:
   m_ObjectHideFlags: 0

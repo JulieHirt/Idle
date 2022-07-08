@@ -4,13 +4,13 @@
 {"name": "Bakery",
 "base_cost":5,
 "payout_time": 10,
-"payout_amount":50,
+"payout_amount":25,
 "qty_owned":0
 },
 
 {"name": "Arcade",
-"base_cost":7,
-"payout_time": 30,
+"base_cost":2,
+"payout_time": 5,
 "payout_amount":5,
 "qty_owned":0
 }

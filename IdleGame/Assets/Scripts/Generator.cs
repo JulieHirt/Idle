@@ -17,6 +17,7 @@ public class Generator : MonoBehaviour
     private float current_cost; //calculated based on base_cost, formula: base_cost^(qty_owned+1)
     private int time_until_payout; //counts down to 0 while timer is running
     private bool is_running; //set to true while countdown coroutine is running
+    private bool is_automated;
 
     public Button runButton;
     public Button automateButton;
@@ -89,7 +90,7 @@ public class Generator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        automate_cost = base_cost * 1000; //automation costs a fixed amount of cash, differnt for each generator
+        automate_cost = base_cost * 100; //automation costs a fixed amount of cash, differnt for each generator
         //calculating it from the base cost, which is unique for each generator, will give an automate cost that is unique.
         UpdateRunUI();
         // qty_owned = 0, therefore base_cost^(qty_owned+1) = base_cost^1 = base_cost
@@ -99,6 +100,7 @@ public class Generator : MonoBehaviour
         automateButton.GetComponentInChildren<Text>().text = "Automate: $" + automate_cost;
         time_until_payout = payout_time;
         is_running = false;
+        is_automated = false;
     }
 
     void UpdateTimeUI()
@@ -148,6 +150,17 @@ public class Generator : MonoBehaviour
 
     }
 
+    public void StartAutomation()
+    {
+        is_automated = true;
+        automateButton.interactable = false;
+        PlayerData.data.loseCash(automate_cost);
+        if(!is_running)//start the coroutine if it is not already running
+        {
+            BeginRunning();
+        }
+    }
+
     void payout()
     {
         float payout = payout_amount * qty_owned;
@@ -157,6 +170,11 @@ public class Generator : MonoBehaviour
         StopCoroutine("Countdown");
         runButton.interactable = true;
         is_running = false;
+        if(is_automated)
+        {
+            BeginRunning();
+            //start the coroutine again
+        }
     }
 
     private IEnumerator Countdown()

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Generator : MonoBehaviour
 {
+    //keep track of the variables that a generator has during gameplay
+    //update the UI so that player can click on buttons, see time remaining, etc
     public string name;
     private int base_cost;
     private int payout_time;
@@ -144,8 +146,7 @@ public class Generator : MonoBehaviour
     void payout()
     {
         float payout = payout_amount * qty_owned;
-        //PlayerData.data.gainCash(payout);
-        PlayerData.data.addCash(current_cost);
+        PlayerData.data.addCash(payout);
         Debug.Log("Payout");
         time_until_payout = payout_time;
         StopCoroutine("Countdown");

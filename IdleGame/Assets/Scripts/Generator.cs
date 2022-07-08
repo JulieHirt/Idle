@@ -56,11 +56,11 @@ public class Generator : MonoBehaviour
     }
     public int get_qty_owned()
     {
-        return payout_amount;
+        return qty_owned;
     }
     public void set_qty_owned(int num)
     {
-        payout_amount = num;
+        qty_owned = num;
     }
     public void Buy()
     {
@@ -129,8 +129,16 @@ public class Generator : MonoBehaviour
         {
             automateButton.interactable = true;
         }
+        //run
+        if(qty_owned <= 0)
+        {
+            runButton.interactable = false;
+        }
+        else
+        {
+            runButton.interactable = true;
+        }
 
-        
     }
 
     void payout()

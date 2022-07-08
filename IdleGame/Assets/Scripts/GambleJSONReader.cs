@@ -12,8 +12,13 @@ public class GambleJSONReader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Generators generatorsInJson = JsonUtility.FromJson<Generators>(jsonFile.text);
-        gambleButton.GetComponentInChildren<Text>().text = "Gamble: \n$" + GAMBLE_COST;
+        GambleWeights gambleWeightsInJson = JsonUtility.FromJson<GambleWeights>(jsonFile.text);
+        Debug.Log(gambleWeightsInJson);
+        foreach (GambleWeight weight in gambleWeightsInJson.gambles)
+        {
+            Debug.Log("Found gamble weight: " + weight.amount + " " + weight.weight);
+        }
+        gambleButton.GetComponentInChildren<Text>().text = "Gamble: \n$" + GAMBLE_COST; //set the text based on the GAMBLE_COST constant
     }
 
     public void Gamble()
@@ -44,6 +49,10 @@ public class GambleJSONReader : MonoBehaviour
         if(PlayerData.data.getCash() > GAMBLE_COST)
         {
             gambleButton.interactable = true;
+        }
+        else
+        {
+            gambleButton.interactable = false;
         }
     }
 

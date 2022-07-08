@@ -20,7 +20,6 @@ public class Generator : MonoBehaviour
     public Button buyButton;
     public Text timeText;
 
-    private IEnumerator coroutine;
 
     //getters and setters
     public string get_name()
@@ -91,7 +90,6 @@ public class Generator : MonoBehaviour
         UpdateBuyUI();
         automateButton.GetComponentInChildren<Text>().text = "Automate: $" + automate_cost;
         time_until_payout = payout_time;
-        coroutine = Countdown();
     }
 
     void UpdateTimeUI()
@@ -142,6 +140,7 @@ public class Generator : MonoBehaviour
         PlayerData.data.addCash(current_cost);
         Debug.Log("Payout");
         time_until_payout = payout_time;
+        StopCoroutine("Countdown");
     }
 
     private IEnumerator Countdown()
@@ -160,13 +159,13 @@ public class Generator : MonoBehaviour
             Debug.Log("waiting...");
         }
         payout();
-        yield break;
+        yield break; //trying to stop
     }
 
     public void BeginRunning()
     {
         Debug.Log("Started Coroutine to make $");
-        StartCoroutine(coroutine);
+        StartCoroutine("Countdown");
     }
 
 }

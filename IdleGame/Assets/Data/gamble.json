@@ -1,0 +1,25 @@
+{
+"gamble":
+[
+{"amount": 5,
+"weight": 80
+},
+
+{"amount": 50,
+"weight": 10
+},
+
+{"amount": 100,
+"weight": 7
+},
+
+{"amount": 10000,
+"weight": 2
+},
+
+{"amount": 100000,
+"weight": 1
+}
+
+]
+}

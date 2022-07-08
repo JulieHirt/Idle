@@ -9,6 +9,7 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
+    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
@@ -575,7 +576,7 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
-      Hash: f0199982843e3b0fa9cd7123edc0672c
+      Hash: 24865dde760b081efc1fa3d50be21366
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Generator
@@ -617,7 +618,7 @@ ScriptsOnlyBuild:
     className: GridLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 640c1e25efb32efd071996b39b66d917
+      Hash: 7eae5c354f3f27fa1b09df2b31196aa2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerData

@@ -13,13 +13,14 @@ public class Generator : MonoBehaviour
     private int automate_cost;
 
     private float current_cost; //calculated based on base_cost, formula: base_cost^(qty_owned+1)
+    private int time_until_payout;
 
     public Button runButton;
     public Button automateButton;
     public Button buyButton;
     public Text timeText;
 
-
+    private IEnumerator coroutine;
 
     //getters and setters
     public string get_name()
@@ -89,6 +90,13 @@ public class Generator : MonoBehaviour
         current_cost = base_cost;
         UpdateBuyUI();
         automateButton.GetComponentInChildren<Text>().text = "Automate: $" + automate_cost;
+        time_until_payout = payout_time;
+        coroutine = Countdown();
+    }
+
+    void UpdateTimeUI()
+    {
+        timeText.text = time_until_payout.ToString();
     }
 
     void UpdateBuyUI()
@@ -124,5 +132,41 @@ public class Generator : MonoBehaviour
             automateButton.interactable = true;
         }
 
+        
     }
+
+    void payout()
+    {
+        float payout = payout_amount * qty_owned;
+        //PlayerData.data.gainCash(payout);
+        PlayerData.data.addCash(current_cost);
+        Debug.Log("Payout");
+        time_until_payout = payout_time;
+    }
+
+    private IEnumerator Countdown()
+    {
+        //countdown to payout, then add payout to cash stack
+        
+        //add code to move slider
+        Debug.Log("in the coroutine");
+        
+        while (time_until_payout >= 0)
+        {
+            
+            UpdateTimeUI();
+            time_until_payout -= 1;
+            yield return new WaitForSeconds(1f);
+            Debug.Log("waiting...");
+        }
+        payout();
+        yield break;
+    }
+
+    public void BeginRunning()
+    {
+        Debug.Log("Started Coroutine to make $");
+        StartCoroutine(coroutine);
+    }
+
 }

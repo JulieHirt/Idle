@@ -22,13 +22,13 @@ public class PlayerData : MonoBehaviour
     {
         cash = num;
     }
-    public void gainCash(float num)
-    {
-        cash += num;
-    }
     public void loseCash(float num)
     {
         cash -= num;
+    }
+    public void addCash(float num)
+    {
+        cash += num;
     }
     public int getNumGenerators()
     {
@@ -43,8 +43,8 @@ public class PlayerData : MonoBehaviour
         //call on game start
 
         //will load the cash and set it to START_CASH if there is no saved value
-        cash = 2000;
-        //cash = PlayerPrefs.GetFloat("cash", START_CASH);
+        //cash = 2000;
+        cash = PlayerPrefs.GetFloat("cash", START_CASH);
     }
 
     private void Update()

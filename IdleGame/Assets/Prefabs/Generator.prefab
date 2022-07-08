@@ -210,7 +210,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 129448401089205970}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 655642966}
+        m_TargetAssemblyTypeName: Generator, Assembly-CSharp
+        m_MethodName: BeginRunning
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &129448401265971739
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,13 +472,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdb012555620c1d49ae92030851756a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  base_cost: 200
-  payout_time: 10
-  payout_amount: 50
-  qty_owned: 0
+  name: Example Name
   runButton: {fileID: 129448401089205971}
   automateButton: {fileID: 129448402909448647}
   buyButton: {fileID: 129448401556141992}
+  timeText: {fileID: 129448402523879780}
 --- !u!1 &129448401556141998
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class PlayerData : MonoBehaviour
     //Singleton
     public static PlayerData data; //static reference
 
-    public float START_CASH = 1000; //starting cash for the player on initial game start
+    public float START_CASH = 10; //starting cash for the player on initial game start
     private float cash;
     private int numGenerators;
 
@@ -43,8 +43,8 @@ public class PlayerData : MonoBehaviour
         //call on game start
 
         //will load the cash and set it to START_CASH if there is no saved value
-        //cash = 2000;
-        cash = PlayerPrefs.GetFloat("cash", START_CASH);
+        cash = 2000;
+        //cash = PlayerPrefs.GetFloat("cash", START_CASH);
     }
 
     private void Update()

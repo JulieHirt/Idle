@@ -98,6 +98,7 @@ public class Generator : MonoBehaviour
         current_cost = base_cost;
         UpdateBuyUI();
         automateButton.GetComponentInChildren<Text>().text = "Automate: $" + automate_cost;
+        automateButton.interactable = false;
         time_until_payout = payout_time;
         is_running = false;
         is_automated = false;
@@ -134,14 +135,11 @@ public class Generator : MonoBehaviour
             buyButton.interactable = true;
         }
         //automate
-        if (PlayerData.data.getCash() < automate_cost)
-        {
-            automateButton.interactable = false;
-        }
-        else
+        if (PlayerData.data.getCash() > automate_cost && is_automated == false && qty_owned > 0)
         {
             automateButton.interactable = true;
         }
+
         //run
         if(qty_owned <= 0)
         {

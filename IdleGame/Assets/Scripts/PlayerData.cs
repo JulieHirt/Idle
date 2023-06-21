@@ -43,8 +43,7 @@ public class PlayerData : MonoBehaviour
         //call on game start
 
         //will load the cash and set it to START_CASH if there is no saved value
-        cash = 2000;
-        //cash = PlayerPrefs.GetFloat("cash", START_CASH);
+        cash = PlayerPrefs.GetFloat("cash", START_CASH);
     }
 
     private void Update()
@@ -53,6 +52,7 @@ public class PlayerData : MonoBehaviour
 
         //save the cash TODO: Don't do this every frame, only on game exit
         PlayerPrefs.SetFloat("cash", cash);
+
     }
 
 

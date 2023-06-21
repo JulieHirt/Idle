@@ -1017,7 +1017,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jsonFile: {fileID: 4900000, guid: 569e206a26e2aee4db4935f37b8b07fd, type: 3}
   gambleButton: {fileID: 1703336233}
-  GAMBLE_COST: 50
 --- !u!1 &1984519677
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,15 +1092,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 129448401265971738, guid: 0bf0bd6b939a7f346906b4deb100104c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 129448401265971738, guid: 0bf0bd6b939a7f346906b4deb100104c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 129448401265971738, guid: 0bf0bd6b939a7f346906b4deb100104c, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 129448401483139712, guid: 0bf0bd6b939a7f346906b4deb100104c, type: 3}
       propertyPath: m_Pivot.x
@@ -1191,17 +1190,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Generator
       objectReference: {fileID: 0}
+    - target: {fileID: 129448401483139713, guid: 0bf0bd6b939a7f346906b4deb100104c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 129448401664289387, guid: 0bf0bd6b939a7f346906b4deb100104c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 129448401664289387, guid: 0bf0bd6b939a7f346906b4deb100104c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 129448401664289387, guid: 0bf0bd6b939a7f346906b4deb100104c, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bf0bd6b939a7f346906b4deb100104c, type: 3}

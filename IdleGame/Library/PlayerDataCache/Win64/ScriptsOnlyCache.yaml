@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - GambleJSONReader
     - Generator
     - JSONReader
     - PlayerData
@@ -77,6 +78,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5108}
     - Class: 114
       Script: {instanceID: 5754}
+    - Class: 114
+      Script: {instanceID: 29928}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -634,7 +637,13 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
+  - hash:
+      serializedVersion: 2
+      Hash: 4fc1ba7168338cf50d5c5ee5db321f6f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GambleJSONReader
   platform: 19
   scenePathNames:
   - Assets/Scenes/Game.unity
-  playerPath: C:/Users/epicpython/Desktop/Unity Games/IdleWindows/IdleGame.exe
+  playerPath: C:/Users/epicpython/Desktop/InterviewIdle/IdleGame.exe

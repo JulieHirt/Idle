@@ -8,10 +8,11 @@ public class JSONReader : MonoBehaviour
 {
     public TextAsset jsonFile;
     public Generator generatorPrefab;
+    private Generators generatorsInJson;
 
     void Start()
     {
-        Generators generatorsInJson = JsonUtility.FromJson<Generators>(jsonFile.text);
+        generatorsInJson = JsonUtility.FromJson<Generators>(jsonFile.text);
 
         float yCoord = -100;
         foreach (GeneratorData generator in generatorsInJson.generators)
@@ -33,6 +34,21 @@ public class JSONReader : MonoBehaviour
             //TO DO: Add to a scrolling list so they do not go off screen
             yCoord += 80;
 
+
+        }
+    }
+
+    private void Update()
+    {
+        //TO DO: call this only on save and not every frame
+        foreach (GeneratorData generator in generatorsInJson.generators)
+        {
+            // TO DO get the generator object //probably by name- store name in tag?
+            //call get_qty_owned()
+            //set get_qty_owned() in PlayerPrefs
+            PlayerPrefs.SetFloat(generator.name, 0);
+
+            //on game load, need to load this data and set up the generators based on it
 
         }
     }

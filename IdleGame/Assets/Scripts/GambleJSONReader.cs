@@ -12,10 +12,8 @@ public class GambleJSONReader : MonoBehaviour
     private int GAMBLE_COST = 30;
 
 
-    //assume 5 sets of amount/weight
-    int weight1 = 2;
+    //assume 2 sets of amount/weight, hard coded for now
     float weight1amt = 40;//cash
-    int weight2 = 3;
     float weight2amt = 20;//cash
 
     private Dictionary<int, float> dictionaryOfGambling = new Dictionary<int, float>(); //key is int value is float
@@ -43,7 +41,7 @@ public class GambleJSONReader : MonoBehaviour
         PlayerData.data.loseCash(GAMBLE_COST);
         
 
-        int total =100; //TO DO: calculate total based on sum of weights (in case sum is not 100)
+        int total =5; //TO DO: calculate total based on sum of weights (in case sum is not 100) OR set to 100 if i am reading from table
         int num = Random.Range(1, total+1); //add +1 so that total is included
 
 
